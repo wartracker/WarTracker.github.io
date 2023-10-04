@@ -6,10 +6,7 @@ import json
 from datetime import datetime
 from dash_bootstrap_templates import load_figure_template
 
-
 load_figure_template("slate")
-
-
 
 x = []
 y = []
@@ -29,10 +26,6 @@ for loss in losses:
         x.append(date)
         y.append(int(loss["model_year"]))
         z.append(loss["name"])
-
-
-
-
 
 df = pd.DataFrame({'Date': x, 'Model Year': y, 'Name': z})
 

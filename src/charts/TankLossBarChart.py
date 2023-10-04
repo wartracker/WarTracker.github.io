@@ -8,7 +8,6 @@ from dash_bootstrap_templates import load_figure_template
 
 load_figure_template("slate")
 
-
 f = open("../../data/losses.json")
 losses = json.load(f)
 f.close()
@@ -51,9 +50,7 @@ for idx, date in enumerate(dates):
         if losstime >= startDate and losstime <= endDate and modelMatch != "No Match Found":
             data[modelMatch][idx] += 1/total * 100
 
-
 formatedData = pd.melt(pd.DataFrame(data=data), id_vars="Date")
-
 
 fig = px.bar(formatedData, x="variable", y="value", animation_frame="Date", template = "slate", title=f'Percentage Of Russian Tanks Lost Last 4 Weeks By Model (Updated: {metaData["last_update_date"]})')
 fig.update_layout(yaxis_range=[0, 100])

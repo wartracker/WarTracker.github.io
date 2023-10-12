@@ -32,5 +32,5 @@ df = pd.DataFrame({'Date': x, 'Model Year': y, 'Name': z})
 fig = px.scatter(df, x="Date", y="Model Year", trendline="rolling", trendline_options=dict(window=50), opacity=0.15, template = "slate", title=f'Rolling Average Model Age Of Destroyed Russian Tanks (Updated: {metaData["last_update_date"]})', hover_data="Name")
 fig.update_layout(xaxis_title="", yaxis_title="")
 
-with open("../../charts/age.html", 'w') as f:
-    f.write(fig.to_html(full_html=False, include_plotlyjs='cdn'))
+with open("../../charts/cumulative.html", 'w') as f:
+    f.write(fig.to_html(include_plotlyjs='cdn'))

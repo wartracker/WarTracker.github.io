@@ -60,4 +60,4 @@ fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = 40
 fig.update_layout(xaxis_title="", yaxis_title="")
 
 with open("../../charts/precentage.html", 'w') as f:
-    f.write(fig.to_html(full_html=False, include_plotlyjs='cdn', auto_play=False))
+    f.write(fig.to_html(include_plotlyjs='cdn'))

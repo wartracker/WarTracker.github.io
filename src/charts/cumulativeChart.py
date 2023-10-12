@@ -54,5 +54,5 @@ fig.layout.updatemenus[0].buttons[0].args[1]['frame']['duration'] = 100
 fig.layout.updatemenus[0].buttons[0].args[1]['transition']['duration'] = 0
 fig.update_layout(xaxis_range=[0, formatedData.max()["value"] + 50])
 
-with open("../../charts/age.html", 'w') as f:
-    f.write(fig.to_html(include_plotlyjs='cdn'))
+with open("../../charts/cumulative.html", 'w') as f:
+    f.write(fig.to_html(include_plotlyjs='cdn', autoplay="off"))

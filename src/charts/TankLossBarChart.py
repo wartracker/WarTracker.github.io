@@ -48,7 +48,7 @@ for idx, date in enumerate(dates):
         losstime = datetime.datetime.strptime(loss["date"], "%d %b %Y")
         modelMatch = loss["model_match"]
         if losstime >= startDate and losstime <= endDate and modelMatch != "No Match Found":
-            data[modelMatch][idx] += 1/total * 100
+            data[modelMatch][idx] += round(1/total * 100)
 
 formatedData = pd.melt(pd.DataFrame(data=data), id_vars="Date")
 

@@ -18,6 +18,8 @@ f.close()
 
 f = open("../../data/meta.json")
 metaData = json.load(f)
+lastUpdateDate = metaData["last_update_date"]
+title = f"Cumulative Count Of Lost Russiant Tanks        Updated: {lastUpdateDate}"
 f.close()
 
 for loss in losses:
@@ -29,7 +31,7 @@ for loss in losses:
 
 df = pd.DataFrame({'Date': x, 'Model Year': y, 'Name': z})
 
-fig = px.scatter(df, x="Date", y="Model Year", trendline="rolling", trendline_options=dict(window=50), opacity=0.15, template = "slate", title=f'Rolling Average Model Age Of Destroyed Russian Tanks (Updated: {metaData["last_update_date"]})', hover_data="Name")
+fig = px.scatter(df, x="Date", y="Model Year", trendline="rolling", trendline_options=dict(window=50), opacity=0.15, template = "slate", title=title, hover_data="Name")
 fig.update_layout(xaxis_title="", yaxis_title="")
 
 with open("../../charts/cumulative.html", 'w') as f:

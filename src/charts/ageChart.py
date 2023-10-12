@@ -15,6 +15,8 @@ f.close()
 
 f = open("../../data/meta.json")
 metaData = json.load(f)
+lastUpdateDate = metaData["last_update_date"]
+title = f"Rolling Average Model Age Of Lost Russian Tanks        Updated: {lastUpdateDate}"
 f.close()
 
 lastRecordedDate = datetime.datetime.strptime(losses[0]["date"], "%d %b %Y")
@@ -44,7 +46,7 @@ for idx, date in enumerate(dates):
 
 formatedData = pd.melt(pd.DataFrame(data=data), id_vars="Date").sort_values(by=["Date", "value", "variable"])
 
-fig = px.bar(formatedData, x="value", y="variable", animation_frame="Date", text_auto=True, orientation='h', title=f'Russian Tanks Lost By Model (Updated: {metaData["last_update_date"]})')
+fig = px.bar(formatedData, x="value", y="variable", animation_frame="Date", title=f'Russian Tanks Lost By Model (Updated: {metaData["last_update_date"]})', text_auto=True, orientation='h')
 
 fig.update_layout(xaxis_title="", yaxis_title="")
 

@@ -24,7 +24,7 @@ jobs:
             - name: Crawl
               if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
               run: |
-                cd src/warSpotting && scrapy crawl Losses -O ../../data/losses.json
+                cd src/crawl && scrapy crawl Losses -O ../../data/losses.json
                 today=$(date +%F)
                 reason=${{ github.event_name}}
                 echo "{\"last_update_date\": \"${today}\", \"reason\": \"${reason}\"}" > ../../data/meta.json

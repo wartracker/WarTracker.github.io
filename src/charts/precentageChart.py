@@ -45,14 +45,12 @@ for idx, date in enumerate(dates):
         losstime = datetime.datetime.strptime(loss["date"], "%d %b %Y")
         modelMatch = loss["model_match"]
         if losstime >= startDate and losstime <= endDate and modelMatch != "No Match Found":
-            total += 1
-    for loss in losses:
-        losstime = datetime.datetime.strptime(loss["date"], "%d %b %Y")
-        modelMatch = loss["model_match"]
-        if losstime >= startDate and losstime <= endDate and modelMatch != "No Match Found":
-            data[modelMatch][idx] += round(1/total * 100)
-
-formatedData = pd.melt(pd.DataFrame(data=data), id_vars="Date")
+            data[modelMatch][idx] += 1
+            
+df = pd.DataFrame(data=data)
+cols = ["T-54/55", "T-62", "T-64", "T-72", "T-80", "T-90", "T-14"]
+df[cols] = df[cols].div(df[cols].sum(axis=1), axis=0).multiply(100).round()
+formatedData = pd.melt(df, id_vars="Date")
 
 fig = px.bar(formatedData, x="variable", y="value", animation_frame="Date", title=title, template = "slate")
 fig.update_layout(yaxis_range=[0, 100])
@@ -63,3 +61,4 @@ fig.update_layout(xaxis_title="", yaxis_title="")
 
 with open("../../charts/precentage.html", 'w') as f:
     f.write(fig.to_html(include_plotlyjs='cdn', auto_play=False))
+

@@ -16,7 +16,7 @@ f.close()
 f = open("../../data/meta.json")
 metaData = json.load(f)
 lastUpdateDate = metaData["last_update_date"]
-title = f"Cumulative Count Of Lost Russiant Tanks        Updated: " + lastUpdateDate
+title = f"Cumulative Count Of Lost Russiant Tanks<br><sup>Updated: {lastUpdateDate}</sup>"
 f.close()
 
 lastRecordedDate = datetime.datetime.strptime(losses[0]["date"], "%d %b %Y")

@@ -19,7 +19,7 @@ f.close()
 f = open("../../data/meta.json")
 metaData = json.load(f)
 lastUpdateDate = metaData["last_update_date"]
-title = f"Rolling Average Model Age Of Lost Russian Tanks        Updated: " + lastUpdateDate
+title = f"Rolling Average Model Age Of Lost Russian Tanks<br><sup>Updated: {lastUpdateDate}</sup>"
 f.close()
 
 for loss in losses:

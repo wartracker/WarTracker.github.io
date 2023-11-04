@@ -15,7 +15,7 @@ f.close()
 f = open("../../data/meta.json")
 metaData = json.load(f)
 lastUpdateDate = metaData["last_update_date"]
-title = "Percentage Of Russian Tanks Lost Last 4 Weeks By Model        Updated: " + lastUpdateDate
+title = f"Percentage Of Russian Tanks Lost Last 4 Weeks By Model<br><sup>Updated: {lastUpdateDate}</sup>"
 f.close()
 
 start = datetime.datetime.strptime("23 Feb 2022", "%d %b %Y")

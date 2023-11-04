@@ -46,7 +46,7 @@ for idx, date in enumerate(dates):
 
 formatedData = pd.melt(pd.DataFrame(data=data), id_vars="Date").sort_values(by=["Date", "value", "variable"])
 
-fig = px.bar(formatedData, x="value", y="variable", animation_frame="Date", title=f'Russian Tanks Lost By Model (Updated: {metaData["last_update_date"]})', text_auto=True, orientation='h')
+fig = px.bar(formatedData, x="value", y="variable", animation_frame="Date", title=title, text_auto=True, orientation='h')
 
 fig.update_layout(xaxis_title="", yaxis_title="")
 

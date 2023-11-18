@@ -23,7 +23,8 @@ end = datetime.datetime.strptime(losses[0]["date"], "%d %b %Y")
 dates = list(pd.date_range(start=start, end=end))
 
 data = {
-    "T-54/55": [0] * len(dates), 
+    "T-54": [0] * len(dates), 
+    "T-55": [0] * len(dates), 
     "T-62": [0] * len(dates), 
     "T-64": [0] * len(dates), 
     "T-72": [0] * len(dates),

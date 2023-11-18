@@ -29,7 +29,7 @@ for loss in losses:
         z.append(loss["name"])
 
 lastAverage = 0
-for i in range(z.len() -50 , z.len()):
+for i in range(len(z) -50 , len(z)):
     lastAverage += z[i]
 
 lastAverage = lastAverage/50

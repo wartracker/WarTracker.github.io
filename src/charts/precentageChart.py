@@ -49,7 +49,7 @@ for idx, date in enumerate(dates):
             data[modelMatch][idx] += 1
             
 df = pd.DataFrame(data=data)
-cols = ["T-54", "T-55" "T-62", "T-64", "T-72", "T-80", "T-90", "T-14"]
+cols = ["T-54", "T-55", "T-62", "T-64", "T-72", "T-80", "T-90", "T-14"]
 df[cols] = df[cols].div(df[cols].sum(axis=1), axis=0).multiply(100).round()
 formatedData = pd.melt(df, id_vars="Date")
 

@@ -19,7 +19,6 @@ f.close()
 f = open("../../data/meta.json")
 metaData = json.load(f)
 lastUpdateDate = metaData["last_update_date"]
-title = f"Rolling Average Model Age Of Lost Russian Tanks<br><sup>Updated: {lastUpdateDate}</sup>"
 f.close()
 
 for loss in losses:
@@ -28,6 +27,14 @@ for loss in losses:
         x.append(date)
         y.append(int(loss["t_value"]))
         z.append(loss["name"])
+
+lastAverage = 0
+for i in range(z.len() -50 , z.len()):
+    lastAverage += z[i]
+
+lastAverage = lastAverage/50
+title = f"Average Russian Tank is a T-{lastAverage}<br><sup>Updated: {lastUpdateDate}</sup>"
+
 
 df = pd.DataFrame({'Date': x, 'T': y, 'Name': z})
 

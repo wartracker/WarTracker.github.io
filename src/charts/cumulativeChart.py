@@ -24,7 +24,8 @@ firstRecordedDate = datetime.datetime.strptime(losses[len(losses) - 1]["date"], 
 dates = list(pd.date_range(start=firstRecordedDate, end=lastRecordedDate))
 
 data = {
-    "T-54/55": [0] * len(dates), 
+    "T-54": [0] * len(dates), 
+    "T-55": [0] * len(dates), 
     "T-62": [0] * len(dates), 
     "T-64": [0] * len(dates), 
     "T-72": [0] * len(dates),

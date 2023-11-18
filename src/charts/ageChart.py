@@ -29,8 +29,8 @@ for loss in losses:
         z.append(loss["name"])
 
 lastAverage = 0
-for i in range(len(z) -50 , len(z)):
-    lastAverage += int(z[i])
+for i in range(len(y) -50 , len(y)):
+    lastAverage += int(y[i])
 
 lastAverage = lastAverage/50
 title = f"Average Russian Tank is a T-{lastAverage}<br><sup>Updated: {lastUpdateDate}</sup>"

@@ -22,7 +22,7 @@ jobs:
             - name: Check out repo
               uses: actions/checkout@v4
             - name: Crawl
-              if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' }}
+              if: ${{ github.event_name == 'schedule' || github.event_name == 'workflow_dispatch' || contains(github.event.head_commit.message,'do scrape')}}
               run: |
                 cd src/crawl && scrapy crawl Losses -O ../../data/losses.json
                 today=$(date +%F)

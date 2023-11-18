@@ -33,7 +33,7 @@ class WarspottingSpiderMiddleware:
         for tank in result:
             if isinstance(tank, dict):
                 model = self.get_tank_model(tank["name"])
-                tank["model_year"] = model["year"]
+                tank["t_value"] = model["t_value"]
                 tank["model_match"] = model["name"]
                 tank["link"] = "https://ukr.warspotting.net" + tank["link"]
 

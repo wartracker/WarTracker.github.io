@@ -42,16 +42,16 @@ class WarspottingSpiderMiddleware:
 
     def get_tank_model(self, tankName):
         tank_models = [
-            {"name": "T-54/55", "year": 1948},
-            {"name": "T-62", "year": 1961},
-            {"name": "T-64", "year": 1966},
-            {"name": "T-72", "year": 1973},
-            {"name": "T-80", "year": 1976},
-            {"name": "T-90", "year": 1992},
-            {"name": "T-14", "year": 2021}
+            {"name": "T-54", "t_value": 54},
+            {"name": "T-62", "t_value": 62},
+            {"name": "T-64", "t_value": 64},
+            {"name": "T-72", "t_value": 72},
+            {"name": "T-80", "t_value": 80},
+            {"name": "T-90", "t_value": 90},
+            {"name": "T-14", "t_value": 114}
         ]
 
-        bestModel = {"name": "No Match Found", "year": 0}
+        bestModel = {"name": "No Match Found", "t_value": 0}
         longestMatch = 0
         for model in tank_models:
             matchedLetters = 0

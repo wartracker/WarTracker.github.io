@@ -26,12 +26,12 @@ for loss in losses:
     if loss["model_match"] != "No Match Found":
         date = datetime.strptime(loss["date"], "%d %b %Y")
         x.append(date)
-        y.append(int(loss["model_year"]))
+        y.append(int(loss["t_value"]))
         z.append(loss["name"])
 
-df = pd.DataFrame({'Date': x, 'Model Year': y, 'Name': z})
+df = pd.DataFrame({'Date': x, 'T': y, 'Name': z})
 
-fig = px.scatter(df, x="Date", y="Model Year", trendline="rolling", trendline_options=dict(window=50), opacity=0.15, template = "slate", title=title, hover_data="Name")
+fig = px.scatter(df, x="Date", y="T", trendline="rolling", trendline_options=dict(window=50), opacity=0.15, template = "slate", title=title, hover_data="Name")
 fig.update_layout(xaxis_title="", yaxis_title="")
 
 with open("../../charts/age.html", 'w') as f:

@@ -30,7 +30,7 @@ for loss in losses:
 
 lastAverage = 0
 for i in range(len(z) -50 , len(z)):
-    lastAverage += z[i]
+    lastAverage += int(z[i])
 
 lastAverage = lastAverage/50
 title = f"Average Russian Tank is a T-{lastAverage}<br><sup>Updated: {lastUpdateDate}</sup>"

@@ -1,4 +1,5 @@
 [
+{"name": "T-72B Obr. 2022", "date": "18 Nov 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/21632/110800/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-72B Obr. 2022", "date": "16 Nov 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/21629/110383/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-72 *", "date": "16 Nov 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/21616/110365/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-80BV", "date": "16 Nov 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/21603/110531/", "t_value": 80, "model_match": "T-80"},
@@ -89,6 +90,7 @@
 {"name": "Unknown T-72 Obr. 2022 variant", "date": "19 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/20819/104776/", "t_value": 0, "model_match": "No Match Found"},
 {"name": "T-72B3", "date": "19 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/20813/104782/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-72 *", "date": "19 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/20776/104738/", "t_value": 72, "model_match": "T-72"},
+{"name": "T-72B3 Obr. 2022", "date": "18 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/20733/110761/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-72B3", "date": "17 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/21386/108082/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-72B3 Obr. 2016", "date": "16 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/20689/105337/", "t_value": 72, "model_match": "T-72"},
 {"name": "T-80 *", "date": "16 Oct 2023", "type": "Tanks", "link": "https://ukr.warspotting.net/view/20688/103691/", "t_value": 80, "model_match": "T-80"},

@@ -33,7 +33,7 @@ jobs:
             - name: Generate HTML charts
               run: |
                 cd src/charts
-                python ageChart.py && python precentageChart.py && python cumulativeChart.py
+                python averageChart.py && python precentageChart.py && python cumulativeChart.py
             - name: Push changes to repo
               run: |
                 git config user.name github-actions

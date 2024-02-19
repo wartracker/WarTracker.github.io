@@ -43,6 +43,7 @@ class WarspottingSpiderMiddleware:
     def get_tank_model(self, tankName):
         tank_models = [
             {"name": "T-54", "t_value": 54},
+            {"name": "T-55", "t_value": 55},
             {"name": "T-62", "t_value": 62},
             {"name": "T-64", "t_value": 64},
             {"name": "T-72", "t_value": 72},

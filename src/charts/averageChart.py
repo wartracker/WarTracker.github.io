@@ -22,7 +22,7 @@ lastUpdateDate = metaData["last_update_date"]
 f.close()
 
 for loss in losses:
-    if loss["model_match"] != "No Match Found":
+    if loss["model_match"] != "No Match Found" and loss["date"]:
         date = datetime.strptime(loss["date"], "%d %b %Y")
         x.append(date)
         y.append(int(loss["t_value"]))

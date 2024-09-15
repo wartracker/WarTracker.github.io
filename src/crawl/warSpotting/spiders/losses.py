@@ -11,7 +11,7 @@ class LossesSpider(scrapy.Spider):
         for vehicle in response.css("#vehicleList tbody tr"):
             yield {
                 "name": vehicle.css("a.vehicle-link::text").get(),
-                "date": vehicle.css("a.d-none.d-lg-inline.link-secondary::text").get(),
+                "date": vehicle.css("a.d-none.d-md-inline.link-secondary::text").get(),
                 "type": vehicle.css("span.d-none.d-lg-block.weapon").attrib["title"],
                 "link": vehicle.css("a.vehicle-link").attrib["href"]
             }
@@ -20,3 +20,6 @@ class LossesSpider(scrapy.Spider):
         if next_page is not None:
             next_page = response.urljoin(next_page)
             yield scrapy.Request(next_page, callback=self.parse)
+
+
+            
